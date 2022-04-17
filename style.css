@@ -95,6 +95,7 @@ a:hover{
     text-align: center;
     border: none;
     color:#6a5acd;
+    display: none;
 }
 
 .menu__backdrop{
@@ -107,11 +108,19 @@ a:hover{
     z-index: 100;
     justify-content: center;
     align-items: center;
-    display: none;
+    transition: all 300ms ease;
+    opacity: 0;
+    visibility: hidden;
 }
 
 .menu--open .menu__backdrop {
-    display: flex;
+    visibility: visible;
+    opacity: 1;
+}
+
+.menu--open{
+    max-height: 100vh;
+    overflow: hidden;
 }
 
 .menu__links{
@@ -287,7 +296,7 @@ button:active{
 }
 
 .section__title{
-    margin-bottom: 16px;
+    margin-bottom: 24px;
 }
 
 
@@ -307,6 +316,12 @@ button:active{
 .game{
     width: 25%;
     padding: 24px;
+}
+
+.game .game__img{
+    width: 100%;
+    height: 50%;
+    max-height: 380px;
 }
 
 .game__img{
@@ -355,6 +370,7 @@ button:active{
     text-align: center;
 }
 
+
 /* More */
 
 #more{
@@ -387,5 +403,35 @@ footer{
     margin: 8px;
 }
 
+@media(max-width: 768px){
+    .header__description{
+        padding: 0 24px; 
+    }
+    h1{
+        font-size: 40px;
+    }
+
+    h2{
+        font-size: 26px;
+    }
+
+    button{
+        font-size: 18px;
+    }
+
+    .game{
+        width: 50%;
+    }
+}
+
+@media (max-width: 550px){
+    .nav__links{
+        display: none;
+    }
+
+    .btn__menu{
+        display: block;
+    }
+}
 
 
